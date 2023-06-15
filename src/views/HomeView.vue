@@ -1,11 +1,18 @@
 <script>
 import Comp from "@/components/Comp.vue"
+import Logo from "@/assets/logo.svg"
 
 export default{
 	
 components: {
 	Comp
 },
+
+data(){
+	return {
+		Logo: Logo
+	}
+}
 	
 }
 
@@ -20,8 +27,9 @@ components: {
 	</template>
 	<template #fallback>
 		<div  class="pre-carregamento">
-		<div class="efeito-carregamento">
-		</div>
+		<!-- <div class="efeito-carregamento"> -->
+			<img class="svg"  :src="Logo" />
+		<!-- </div> -->
 	</div>
 	</template>
 </Suspense>
@@ -34,15 +42,7 @@ components: {
 </template>
 
 <style>
-	section{
-		width: 100%;
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		justify-content: center ;
-		background-color: #8827ba;
-		margin: 0;
-	}
+
 	
 	img{
 		width: 55%;
@@ -67,6 +67,13 @@ components: {
 		
 		/*display: none;*/
 	}
+
+	.svg{
+		width: 50px;
+		margin: auto;
+		display: flex;
+		animation: efeito 0.5s infinite;
+	}
 	
 	div.efeito-carregamento{
 		width: 35px;
@@ -74,7 +81,7 @@ components: {
 		border-radius: 100%;
 		background-color : white;
 		
-		animation: efeito 0.5s infinite;
+/*		animation: efeito 0.5s infinite;*/
 	}
 	
 	@keyframes efeito {
@@ -82,6 +89,7 @@ components: {
 			box-shadow: 0 0 0 0 white;
 		}
 		100%{
+			width: 35px;
 			box-shadow: 0 0 0 15px rgba(255, 255, 255, 0.1);
 		}
 	}

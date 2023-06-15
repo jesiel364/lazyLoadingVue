@@ -32,3 +32,15 @@
 		}
 	}
 </script>
+
+<style scoped>
+		section{
+		max-width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center ;
+		background-color: #8827ba;
+		margin: 0;
+	}
+</style>
